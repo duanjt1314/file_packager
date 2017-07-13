@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataProcessSystem>
+	<FSFilePackager Name="FSFilePackager" Enabled="true" Input="F:\Switch2015\DataCopyService\FTP" Filter="*" IncludeFolders="true" Output="F:\Switch2015\DataCopyService\FTP\FailedPackage" Interval="300" PackageSize="500" MaxIntervalTimes="-1" SaveDay="30" />
+	<FSFilePackager Explan="" Name="BackupPackage" Enabled="true" Input="F:\Switch2015\FileDispatcher\Backup" Output="F:\Switch2015\FileDispatcher\BackupPackage" Filter="*" IncludeFolders="true" Interval="300" PackageSize="5000" MaxIntervalTimes="-1" SaveDay="30" />
+	<FSFilePackager Explan="清理无效数据" Name="DataCleanInvalid" Enabled="true" Input="F:\Switch2015\DataClean\Invalid" Output="F:\Switch2015\DataClean\InvalidPackage" Filter="*" IncludeFolders="true" Interval="300" PackageSize="3000" MaxIntervalTimes="-1" SaveDay="30" />
+	
+	<Delete Directory="F:\Log2015\WifiServiceManager" SaveDay="2" />
+
+</DataProcessSystem>
