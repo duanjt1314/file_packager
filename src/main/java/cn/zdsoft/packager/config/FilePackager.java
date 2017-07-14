@@ -13,7 +13,7 @@ public class FilePackager {
 	/**
 	 * 获取或设置 是否启用打包器
 	 */
-	public String Enabled;
+	public boolean Enabled;
 	/**
 	 * 获取或设置 打包器待打包目录
 	 */
