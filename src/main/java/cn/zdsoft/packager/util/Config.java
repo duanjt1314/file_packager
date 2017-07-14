@@ -8,7 +8,6 @@ import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import cn.zdsoft.common.ConvertUtil;
 import cn.zdsoft.common.PathUtil;
 import cn.zdsoft.common.XmlUtil;
 import cn.zdsoft.packager.config.Delete;
