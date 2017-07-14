@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <DataProcessSystem>
-	<!-- 文件打包 -->
-	<FSFilePackager Name="FSFilePackager" Enabled="true" Input="F:\Switch2015\DataCopyService\FTP" Filter="*" IncludeFolders="true" Output="F:\Switch2015\DataCopyService\FTP\FailedPackage" Interval="300" PackageSize="500" MaxIntervalTimes="-1" SaveDay="30" />
+	<!-- 
+	文件打包 
+	Name:打包的名称
+	Enabled:是否启用
+	Input:待打包的目录
+	Filter:筛选条件，只筛选指定文件，为空代表所有文件
+	IncludeFolders:打包时是否把文件夹打包到压缩文件里面
+	Output:打包后的输出目录
+	Interval:多久执行一次目录扫描，单位：毫秒
+	PackageSize:多少个文件组成一个压缩包
+	-->
+	<FSFilePackager
+		Name="FSFilePackager"
+		Enabled="true"
+		Input="F:\Switch2015\DataCopyService\FTP"
+		Filter=""
+		IncludeFolders="true"
+		Output="F:\Switch2015\DataCopyService\FTP\FailedPackage"
+		Interval="300"
+		PackageSize="500" />
+
 	<!-- 文件删除 -->
-	<Delete Directory="F:\Log2015\WifiServiceManager" SaveDay="2" />
+	<!-- Directory:需要删除的目录 SaveDay:保存文件的天数 -->
+	<Delete
+		Directory="F:\Log2015\WifiServiceManager"
+		SaveDay="2" />
 
 </DataProcessSystem>
