@@ -5,7 +5,7 @@
 	Name:打包的名称
 	Enabled:是否启用
 	Input:待打包的目录
-	Filter:筛选条件，只筛选指定文件，为空代表所有文件
+	Filter:筛选条件，只筛选指定文件，为空代表所有文件。会通过indexOf筛选
 	IncludeFolders:打包时是否把文件夹打包到压缩文件里面
 	Output:打包后的输出目录
 	Interval:多久执行一次目录扫描，单位：毫秒
