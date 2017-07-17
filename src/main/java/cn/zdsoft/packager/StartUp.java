@@ -30,15 +30,19 @@ public class StartUp extends ThreadBase {
 		Config config = Config.getConfig();
 		LogHelper.getLogger().info("读取配置文件的信息如下:"+StringUtil.GetJsonString(config));
 
-		// 循环启动
+		// 循环启动[删除任务]
 		for (Delete delete : config.getDeletes()) {
 			DeleteTask dtask=new DeleteTask(delete);
 			dtask.Start();
 			deleteTasks.add(dtask);
 		}
-		
+		//循环启动[打包任务]
 		for (FilePackager filePackager : config.getFilePackagers()) {
-			
+			if(filePackager.Enabled){
+				PackagerTask packagerTask=new PackagerTask(filePackager);
+				packagerTask.Start();
+				packagerTasks.add(packagerTask);
+			}
 		}
 	}
 
@@ -47,6 +51,13 @@ public class StartUp extends ThreadBase {
 	 */
 	public void Stop() {
 		LogHelper.getLogger().info("收到停止指令,程序停止中.");
-		running = false;
+		for (DeleteTask deleteTask : deleteTasks) {
+			deleteTask.Stop();
+		}
+		for (PackagerTask packagerTask : packagerTasks) {
+			packagerTask.Stop();
+		}
+		deleteTasks.clear();
+		packagerTasks.clear();
 	}
 }

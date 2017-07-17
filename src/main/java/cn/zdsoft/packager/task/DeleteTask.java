@@ -74,7 +74,7 @@ public class DeleteTask extends ThreadBase {
 				LogHelper.getLogger().error("定时删除任务出现异常", e);
 			} finally {
 				try {
-					Wait(2);
+					Wait(60);//扫描不要太频繁,60秒扫描一次差不多
 				} catch (InterruptedException e) {
 					LogHelper.getLogger().error("暂停60秒出错", e);
 				}
