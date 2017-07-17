@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -40,11 +41,11 @@ public class AppTest {
 		});
 
 		// 打印
-		listFile.forEach(f -> System.out.println(f.getName()));
+		listFile.forEach(f -> System.out.println(f.getName()+"\t"+f.lastModified()));
 
 		String a = "a";
 		String b = "f";
-		System.out.println(a.compareTo(b));
+		System.out.println(new Date().getTime());
 	}
 
 	@Test

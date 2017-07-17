@@ -24,7 +24,7 @@
 	<!-- 文件删除 -->
 	<!-- Directory:需要删除的目录 SaveDay:保存文件的天数 -->
 	<Delete
-		Directory="F:\Log2015\WifiServiceManager"
+		Directory="F:\Log2015"
 		SaveDay="2" />
 
 </DataProcessSystem>

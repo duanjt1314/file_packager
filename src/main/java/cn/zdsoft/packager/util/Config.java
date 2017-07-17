@@ -93,8 +93,8 @@ public class Config {
 				for (Object delete : ele.elements("Delete")) {
 					Element eleDelete=(Element)delete;
 					Delete d=new Delete();
-					d.Directory=XmlUtil.GetXmlElement(eleDelete, "Directory").getText();
-					d.SaveDay=Integer.parseInt(XmlUtil.GetXmlElement(eleDelete, "SaveDay").getText());
+					d.Directory=XmlUtil.GetXmlAttr(eleDelete, "Directory").getText();
+					d.SaveDay=Integer.parseInt(XmlUtil.GetXmlAttr(eleDelete, "SaveDay").getText());
 					this.deletes.add(d);
 				}
 
